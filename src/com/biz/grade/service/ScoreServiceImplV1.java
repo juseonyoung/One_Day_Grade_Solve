@@ -260,11 +260,12 @@ public class ScoreServiceImplV1 implements ScoreService {
 		System.out.print("과목평균:\t|");
 		float avgAndAvg=0f;
 		for(int sum : totalSum) {
-			float avg = (float)sum / totalSum.length;
+			float avg = (float)sum / scoreList.size();
 			System.out.printf("%5.2f\t|\n",avg);
+			avgAndAvg += avg;
 			
 		}
-		System.out.printf("\t%5.2f\t|\n",avgAndAvg/totalSum.length);
+		System.out.printf("\t%5.2f\t|\n",avgAndAvg/scoreList.size());
 		System.out.println();
 		
 		System.out.println(Lines.dLine);
@@ -285,13 +286,13 @@ public class ScoreServiceImplV1 implements ScoreService {
 			pWriter.printf("%d:", scoreVO.getEng());
 			pWriter.printf("%d:", scoreVO.getMath());
 			pWriter.printf("%d:", scoreVO.getMusic());
-			pWriter.printf("%d:", scoreVO.getSum());
-			pWriter.printf("%d:\n", scoreVO.getAvg());
 			pWriter.flush();
 			pWriter.close();
 
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace(); //catch 빈칸으로 두면 안됨!
+		
 		}
 
 	}

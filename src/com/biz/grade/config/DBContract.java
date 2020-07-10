@@ -26,10 +26,10 @@ public class DBContract {
 	}
 	
 	public static class MENU {
-		public static final int 학생정보등록 =0;
-		public static final int 학생리스트출력 =1;
-		public static final int 성적등록=2;
-		public static final int 성적일람표 =3;
+		public static final int 학생정보등록 =1;
+		public static final int 학생리스트출력 =2;
+		public static final int 성적등록=3;
+		public static final int 성적일람표 =4;
 		
 		
 		
